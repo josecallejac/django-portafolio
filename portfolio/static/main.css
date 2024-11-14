@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+.raleway-thin {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+.raleway-light {
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.raleway-bold{
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+    background: #090909;
+    font-family: 'Raleway';
+  }
+  
+  .bg-black {
+    background: #000;
+  }
+  
+  .card-project:hover {
+    border: 1px solid #eee;
+    cursor: pointer;
+  }
+
+  .imagenprofile{
+    width:80%;
+    border-radius: 200px;
+}
