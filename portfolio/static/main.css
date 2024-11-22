@@ -37,3 +37,21 @@ body {
     width:80%;
     border-radius: 200px;
 }
+  .tech-box {
+    border: 2px solid #a64bf4; /* Morado */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(166, 75, 244, 0.4); /* Sombra morada */
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tech-box:hover {
+    transform: translateY(-5px); /* Efecto de "flotar" al pasar el mouse */
+    box-shadow: 0 6px 15px rgba(166, 75, 244, 0.6); /* Sombra más intensa */
+  }
+
+  .tech-box i {
+    display: block;
+    margin-bottom: 10px;
+  }
+
