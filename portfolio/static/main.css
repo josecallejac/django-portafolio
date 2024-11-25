@@ -55,3 +55,56 @@ body {
     margin-bottom: 10px;
   }
 
+/* Botón personalizado base */
+.btn-custom {
+  color: #fff; /* Texto blanco */
+  border: 2px solid transparent; /* Sin borde inicial */
+  transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+/* GitHub */
+.btn-github {
+  background-color: transparent;
+  color: #a64bf4; /* Morado claro */
+  border: 2px solid #a64bf4;
+}
+
+.btn-github:hover {
+  background-color: #a64bf4;
+  color: #fff; /* Blanco */
+  border-color: #a64bf4;
+}
+
+/* LinkedIn */
+.btn-linkedin {
+  background-color: transparent;
+  color: #64b5f6; /* Azul claro */
+  border: 2px solid #64b5f6;
+}
+
+.btn-linkedin:hover {
+  background-color: #1e88e5; /* Azul oscuro */
+  color: #fff; /* Blanco */
+  border-color: #1e88e5;
+}
+
+/* Contacto */
+.btn-contact {
+  background-color: transparent;
+  color: #66bb6a; /* Verde neón */
+  border: 2px solid #66bb6a;
+}
+
+.btn-contact:hover {
+  background-color: #388e3c; /* Verde más oscuro */
+  color: #fff; /* Blanco */
+  border-color: #388e3c;
+}
+
+
+
+/* Íconos dentro de los botones */
+.btn-custom i {
+  margin-right: 8px; /* Espaciado entre el ícono y el texto */
+}
+
