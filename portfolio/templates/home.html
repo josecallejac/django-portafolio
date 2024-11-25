@@ -50,6 +50,16 @@
         <p class="raleway-bold">Python</p>
       </div>
     </div>
+    <div class="col-md-2 col-sm-4 col-6 mb-4">
+      <div class="tech-box">
+        <img 
+      src="https://static.djangoproject.com/img/logos/django-logo-negative.svg" 
+      alt="Django Logo" 
+      style="width: 7rem; margin-bottom: 0.5rem; height: 50px;"
+    />
+        <p class="raleway-bold">Django</p>
+      </div>
+    </div>
 
     <div class="col-md-2 col-sm-4 col-6 mb-4">
       <div class="tech-box">
@@ -58,12 +68,7 @@
       </div>
     </div>
 
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <div class="tech-box">
-        <i class="fas fa-leaf fa-3x text-success mb-2"></i>
-        <p class="raleway-bold">Django</p>
-      </div>
-    </div>
+    
 
     <div class="col-md-2 col-sm-4 col-6 mb-4">
       <div class="tech-box">
@@ -87,7 +92,6 @@
     </div>
   </div>
 
-  <!-- Nueva fila -->
   <div class="row mt-4 justify-content-center">
     <div class="col-md-2 col-sm-4 col-6 mb-4">
       <div class="tech-box text-center">
@@ -104,36 +108,46 @@
     </div>
   </div>
 </section>
+<!-- Portfolio Section -->
+<section>
+  <div class="row my-4 text-center">
+    <h3 class="raleway-bold text-light mb-4">Mis proyectos</h3>
+  </div>
 
+  <div class="row justify-content-center">
+    {% for project in projects %}
+    <div class="col-md-4 col-sm-6 mb-4">
+      <div class="card bg-black card-project rounded">
+        <!-- Imagen del proyecto -->
+        <img 
+          src="{{ project.image.url }}" 
+          class="card-img-top rounded-top" 
+          alt="{{ project.title }}" 
+          style="height: 200px; object-fit: cover;"
+        />
 
+        <!-- Contenido de la tarjeta -->
+        <div class="card-body text-center">
+          <h4 class="raleway-bold text-light">{{ project.title }}</h4>
+          <p class="raleway-light text-light">{{ project.description }}</p>
 
-
-<!-- Porfolio Section -->
-<div class="row my-4 text-center">
-
-  <h3  class="raleway-bold">Mis proyectos</h3>
-  <p class="raleway-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, aperiam?</p>
-
-  {% for project in projects %}
-  <div class="col-md-4 p-4">
-    <div class="card bg-black card-project">
-      <img src="{{project.image.url }}" class="card-img-top" />
-
-      <div class="card-body">
-
-        <h2 class="raleway-bold">{{ project.title }}</h2>
-        <p class="raleway-light">{{ project.description }}</p>
-
-        {% if project.url %}
-        <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="__blank" rel="noreferrer">
-           Visita la Pagina
-        </a>
-        {% endif %}
+          {% if project.url %}
+          <a 
+            href="{{ project.url }}" 
+            class="btn btn-github btn-sm mt-2" 
+            target="__blank" 
+            rel="noreferrer"
+          >
+            <i class="fas fa-external-link-alt"></i> Visita la Página
+          </a>
+          {% endif %}
+        </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
+</section>
+
 
 
 {% endblock %}
