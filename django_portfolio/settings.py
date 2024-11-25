@@ -153,4 +153,4 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ALLOWED_HOSTS = ['localhost', 'web-production-fbc1.up.railway.app','josecalleja.lat', 'www.josecalleja.lat' ]
 
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://web-production-fbc1.up.railway.app','josecalleja.lat', 'www.josecalleja.lat']
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://web-production-fbc1.up.railway.app','https://josecalleja.lat', 'https://www.josecalleja.lat']
