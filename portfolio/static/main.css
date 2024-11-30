@@ -108,3 +108,152 @@ body {
   margin-right: 8px; /* Espaciado entre el ícono y el texto */
 }
 
+.exp-card {
+  background: #111; /* Fondo sólido del contenido */
+  color: #fff; /* Texto blanco */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  position: relative; /* Asegura que el contenido esté encima del borde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease ; /* Animaciones */
+}
+
+/* Gradiente en el box-shadow en hover */
+.exp-card:hover {
+  background: #111; /* Fondo del contenido en hover */
+  box-shadow: 
+    0 0 10px rgba(0, 0, 0, 0.2), 
+    0 0 20px rgba(213, 58, 157, 0.6), /* Sombra roja suave */
+    0 0 15px rgba(167, 35, 204, 0.4), /* Gradiente de sombra morada */
+    0 0 15px rgba(213, 58, 157, 0.4); /* Gradiente de sombra roja */
+  transform: translateY(-5px); /* Efecto flotante */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+
+
+/* Encabezado de la tarjeta */
+.exp-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.exp-header i {
+  font-size: 24px;
+  color: #a64bf4;
+  margin-right: 10px;
+}
+
+.exp-header h3 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Información de la empresa */
+.exp-company {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* Descripción */
+.exp-description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Etiquetas */
+.exp-tags span {
+  display: inline-block;
+  background-color: #222;
+  color: #a64bf4;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+/* Botón */
+.btn-exp {
+  display: inline-block;
+  background-color: transparent;
+  color: #a64bf4;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 2px solid #a64bf4;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-exp:hover {
+  background-color: #a64bf4;
+  color: #fff;
+}
+
+
+/* Estilos generales */
+.social-links, .flex-center {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.social-btn {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  font-family: 'Titillium Web', sans-serif;
+  color: #fff; /* Cambiado a blanco */
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  background: white;
+  margin: 5px;
+  transition: all 0.3s ease; /* Transición más fluida */
+  justify-content: center;
+  padding: 0 10px; /* Agrega espacio interno */
+}
+
+.social-btn svg {
+  height: 24px;
+  width: 24px;
+}
+
+.social-btn span {
+  width: 0px;
+  overflow: hidden;
+  transition: width 0.3s ease, padding 0.3s ease; /* Transición más específica */
+  text-align: center;
+  margin-left: 5px;
+}
+
+
+
+/* Colores personalizados para cada red social */
+#gmail {
+  background: #d93025; /* Rojo característico de Gmail */
+}
+
+#gmail svg {
+  fill: #fff; /* Icono blanco */
+}
+
+
+#linkedin {
+  background: #0e76a8; /* Fondo azul */
+}
+
+#linkedin svg {
+  fill: #fff; /* Icono blanco */
+}
+
+#github {
+  background: #333; /* Fondo negro */
+}
+
+#github svg {
+  fill: #fff; /* Icono blanco */
+}

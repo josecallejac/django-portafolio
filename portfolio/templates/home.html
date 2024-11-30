@@ -15,25 +15,32 @@
   </div>
 
   <div class="col-md-8 my-auto p-4">
-    <h1>Hola 👋 <strong class="raleway-bold"> soy José Calleja</strong></h1>
+    <h1 class="raleway-bold">Hola 👋 <strong > soy José Calleja</strong></h1>
     <h3>Desarrollador FullStack</h3>
     <p>Apasionado por crear soluciones tecnologicas con impacto innovador</p>
     
-    <!-- Botón GitHub -->
-    <a class="btn btn-custom btn-github btn-lg rounded-0 my-3 raleway-bold" href="https://github.com/josecallejac">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-    
-    <!-- Botón LinkedIn -->
-    <a class="btn btn-custom btn-linkedin btn-lg rounded-0 my-3 raleway-bold" href="https://www.linkedin.com/in/jose-calleja-24a45923a/">
-      <i class="fab fa-linkedin"></i> Linkedin
-    </a>
-    
-    <!-- Botón Contacto -->
-    <a class="btn btn-custom btn-contact btn-lg rounded-0 my-3 raleway-bold" href="mailto:jose.ue98@gmail.com">
-      <i class="fas fa-envelope"></i> Contacto
-    </a>
+    <div class="social-links">
+        <div id="gmail" class="social-btn flex-center">
+          <a href="mailto:jose.ue98@gmail.com">
+          <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12.713L0 5.926V18c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2V5.926l-12 6.787zm0-2.264l10.651-6.02H1.349L12 10.449zm11.989-6.646C23.927 3.07 23.466 3 23 3H1c-.465 0-.927.07-1.292.206L12 9.93l11.989-6.823z"></path>
+          </svg>
+          </a>
+        </div>
+        <div id="linkedin" class="social-btn flex-center">
+          <a href="https://www.linkedin.com/in/jose-calleja-24a45923a/">
+            <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg>
+          </a>
+          </div>
+
+        <div id="github" class="social-btn flex-center">
+          <a href="https://github.com/josecallejac">
+            <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+          </a>
+        </div>
+    </div>
   </div>
+  
   
 </header>
 
@@ -42,7 +49,7 @@
   <h2 class="raleway-bold">Software Stack</h2>
   <p class="raleway-light">Las tecnologías que utilizo para crear soluciones increíbles</p>
 
-  <div class="row mt-4">
+  <div class="row mt-4 justify-content-center">
     <!-- Fila Superior -->
     <div class="col-md-2 col-sm-4 col-6 mb-4">
       <div class="tech-box">
@@ -51,12 +58,11 @@
       </div>
     </div>
     <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <div class="tech-box">
+      <div class="tech-box text-center">
         <img 
       src="https://static.djangoproject.com/img/logos/django-logo-negative.svg" 
       alt="Django Logo" 
-      style="width: 7rem; margin-bottom: 0.5rem; height: 50px;"
-    />
+      style="width: 5rem; margin-bottom: 0.4rem; height: 50px;"/>
         <p class="raleway-bold">Django</p>
       </div>
     </div>
@@ -108,7 +114,58 @@
     </div>
   </div>
 </section>
-<!-- Portfolio Section -->
+
+
+<section id="experiencia" class="mt-5">
+  <h2 class="text-white raleway-bold">Experiencia</h2>
+  <div class="row mt-4 justify-content-center">
+    <!-- Primera experiencia -->
+    <div class="col-md-12 mb-4">
+      <div class="exp-card">
+        <div class="exp-header">
+          <i class="bi bi-briefcase-fill"></i>
+          <h3>Developer FullStack · Soporte TI </h3>
+        </div>
+        <p class="exp-company">TS Latam · Enero 2024 - Presente</p>
+        <p class="exp-description">
+          Desarrollo de aplicaciones web escalables, enfocado en código limpio y mejores prácticas.
+        </p>
+        <div class="exp-tags">
+          <span>PHP</span>
+          <span>Symfony</span>
+          <span>Angular</span>
+          <span>SQL</span>
+          <span>Diseño Web</span>
+        </div>
+        <a href="https://tourpay.app/" class="btn-exp">Visitar empresa</a>
+      </div>
+    </div>
+
+    <!-- Segunda experiencia -->
+    <div class="col-md-12 mb-4">
+      <div class="exp-card">
+        <div class="exp-header">
+          <i class="bi bi-briefcase-fill"></i>
+          <h3>Software Engineer</h3>
+        </div>
+        <p class="exp-company">Arcadius · Junio 2023 - Diciembre 2023</p>
+        <p class="exp-description">
+          Desarrollo de producto desde etapas tempranas, desplegando aplicaciones en GCP y participando en decisiones arquitectónicas.
+        </p>
+        <div class="exp-tags">
+          <span>Unreal Engine</span>
+          <span>Desarrollo Ágil</span>
+          <span>Arquitectura de Software</span>
+        </div><br>
+        <a href="#" class="btn-exp">Visitar empresa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Projects Section -->
 <section>
   <div class="row my-4 text-center">
     <h3 class="raleway-bold text-light mb-4">Mis proyectos</h3>
@@ -149,5 +206,10 @@
 </section>
 
 
+
+{% endblock %}
+
+
+{% block javascript %}
 
 {% endblock %}
