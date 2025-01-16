@@ -414,3 +414,91 @@ body {
 .brutalist-button:active .button-text {
   transform: scale(0.95);
 }
+
+/* Timeline General */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin-left: 3rem;
+  border-left: 3px solid #ffc107; /* Línea amarilla */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -13px;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  border-radius: 50%;
+  border: 3px solid #222;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-dot:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
+}
+
+
+/* Timeline Content */
+.timeline-content {
+  padding: 1.5rem;
+  background-color: #2a2a2a; /* Fondo ligeramente menos oscuro */
+  color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.timeline-content:hover {
+  background-color: #333;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos y Descripción */
+.exp-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffc107;
+  margin-bottom: 0.5rem;
+}
+
+.exp-company {
+  font-style: italic;
+  font-size: 1rem;
+  color: #ffc107;
+  margin-bottom: 0.8rem;
+}
+
+.exp-description {
+  margin: 0.8rem 0;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Etiquetas */
+.exp-tags {
+  margin-top: 1rem;
+}
+
+.exp-tags span {
+  display: inline-block;
+  background-color: #333;
+  color: #ffc107;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.exp-tags span:hover {
+  background-color: #444;
+  transform: scale(1.1);
+}
