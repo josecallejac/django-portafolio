@@ -1,22 +1,35 @@
 {% load static %}
+{% block stylesheets %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-black">
-  <div class="container">
-    <a class="navbar-brand fw-bold fst-italic" href="/">JC</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link raleway-bold" style="color: white;" href="{% url 'blog:posts' %}">Trabajos</a>
-        </li>
-        <li class="nav-item d-flex align-items-center">
-          <a class="btn btn-sm raleway-bold" target="_blank" 
-          rel="noopener noreferrer" style="background-color: #7952B3; color: #fff;" href="{% static 'portfolio/CVJOSECALLEJA.pdf' %}"> CV</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+{% endblock %}
+    
+<section class="flex items-center justify-center"> 
+
+    <nav class="mt-0.5 py-2 px-2 bg-gray-800 rounded-full "> 
+        <ul class="flex items-baseline space-x-10 sm:space-x-12 md:space-x-16 text-xs sm:text-sm" style="padding-right: 1.5rem; padding-top: 7px; margin-bottom: 0.3rem;">
+            <li>
+                <a href="#" class="relative raleway-light text-white hover:text-gray-300  py-3" style="text-decoration: none; font-weight: 500;"> 
+                  Home
+                </a>
+            </li>
+            <li>
+                <a href="#experiencia" class="relative raleway-light text-white hover:text-gray-300 transition-colors duration-150 py-3" style="text-decoration: none; font-weight: 500;"> 
+                    Sobre
+                </a>
+            </li>
+            <li>
+                <a href="#proyectos" class="relative raleway-light text-white hover:text-gray-300 transition-colors duration-150 py-3" style="text-decoration: none; font-weight: 500;"> 
+                    Proyectos
+                </a>
+            </li>
+            <li>
+                <a href="#" class="relative raleway-light text-white hover:text-gray-300 transition-colors duration-150 py-3" style="text-decoration: none; font-weight: 500;"> 
+                    Contacto
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</section>
+
