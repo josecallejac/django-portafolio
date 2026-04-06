@@ -1,33 +1,54 @@
 {% extends 'layout.html' %}
 
+{% block title %}Blog | José Calleja{% endblock %}
+
 {% block content %}
 
-<h1 class="fs-2">Posts</h1>
-<h3>Hay {{total_posts}} post{{total_posts|pluralize}}</h3>
-
-{% for post in posts %}
-
-<div class="py-3">
-
-  <div class="card card-body bg-black">
-    <div class="row">
-
-      <div class="col-3">
-        <img class="img-fluid" src="{{post.image.url}}" alt="{{post.title}}">
-
+<section class="section">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-2 mb-4">
+      <div>
+        <h1 class="display-6 fw-bold mb-2">Blog</h1>
+        <p class="text-secondary mb-0">Hay {{ total_posts }} post{{ total_posts|pluralize }}.</p>
       </div>
-      <div class="col-9">
 
-        <h1>{{post.title}}</h1>
-        <p>{{post.description|striptags|truncatechars:100}}</p>
-        <p>{{post.date|date:'M d Y'|upper}}</p>
+      <a class="btn btn-outline-primary" href="{% url 'home' %}#inicio">
+        <i class="fa-solid fa-arrow-left me-2"></i> Volver al inicio
+      </a>
+    </div>
 
-        <a href="{% url 'blog:post_detail' post.id %}">{{post.title}}</a>
+    <div class="row g-4">
+      {% for post in posts %}
+      <div class="col-sm-6 col-lg-4">
+        <article class="card h-100 border-0 shadow-sm">
+          <a href="{% url 'blog:post_detail' post.id %}" class="text-decoration-none">
+            <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}"
+              style="height: 190px; object-fit: cover;" loading="lazy">
+          </a>
+
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <small class="text-secondary">{{ post.date|date:'d M Y' }}</small>
+            </div>
+
+            <h2 class="h5 fw-bold mb-2">
+              <a class="text-body text-decoration-none" href="{% url 'blog:post_detail' post.id %}">
+                {{ post.title }}
+              </a>
+            </h2>
+            <p class="text-secondary mb-0">{{ post.description|striptags|truncatechars:140 }}</p>
+          </div>
+
+          <div class="card-footer bg-transparent border-0 pt-0 pb-3 px-3">
+            <a class="btn btn-primary btn-sm" href="{% url 'blog:post_detail' post.id %}">
+              Leer más <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </article>
       </div>
+      {% endfor %}
     </div>
   </div>
-</div>
-
-{% endfor %}
+</section>
 
 {% endblock %}

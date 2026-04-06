@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 .raleway-thin {
   font-family: "Raleway", serif;
   font-optical-sizing: auto;
@@ -20,28 +19,25 @@
 }
 
 :root {
-  --primary: #6C63FF;
-  --secondary: #F3F4F6;
-  --accent: #FF6584;
-}
+  --bs-body-font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif;
+  --bs-primary: #6c63ff;
+  --bs-primary-rgb: 108, 99, 255;
+  --bs-link-color: #6c63ff;
+  --bs-link-hover-color: #574bdf;
 
+  --app-bg: #f8fafc;
+  --app-text: #0f172a;
+  --app-muted: #475569;
+  --app-hero-1: #0b1220;
+  --app-hero-2: #1f1b3a;
+  --app-nav-offset: 4.75rem;
+}
 
 body {
-    background: #f9f9f9;
-    color:#f9f9f9;
-    font-family: 'Raleway';
-  }
-
-
-/* Botón primario */
-.btn-primary {
-  background-color: #6C63FF;
-  border-color: #6C63FF;
-}
-
-.btn-primary:hover {
-  background-color: #574bdf;
-  border-color: #574bdf;
+  background: var(--app-bg);
+  color: var(--app-text);
+  padding-top: var(--app-nav-offset);
 }
 
 /* Enlaces */
@@ -50,7 +46,114 @@ a {
 }
 
 a:hover {
+  text-decoration: none;
+}
+
+.app-navbar {
+  background-color: rgba(33, 37, 41, 0.92) !important;
+  backdrop-filter: blur(10px);
+}
+
+.btn-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hero-section {
+  color: #fff;
+  margin-top: calc(var(--app-nav-offset) * -1);
+  padding-top: var(--app-nav-offset);
+  background: radial-gradient(1200px circle at 20% 10%, rgba(108, 99, 255, 0.35), transparent 55%),
+    radial-gradient(900px circle at 80% 40%, rgba(255, 101, 132, 0.22), transparent 55%),
+    linear-gradient(135deg, var(--app-hero-1), var(--app-hero-2));
+}
+
+/* Evita que el navbar tape los anchors */
+.section,
+#inicio,
+#experiencia,
+#proyectos,
+#contacto {
+  scroll-margin-top: calc(var(--app-nav-offset) + 1rem);
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+}
+
+.hero-avatar {
+  width: min(320px, 75vw);
+  border-radius: 999px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  border: 6px solid rgba(255, 255, 255, 0.15);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  letter-spacing: 0.5px;
+}
+
+.content-prose a {
   text-decoration: underline;
+}
+
+.content-prose {
+  color: var(--app-text);
+  line-height: 1.75;
+}
+
+/* Forzar legibilidad cuando el HTML del post viene con color blanco inline */
+.content-prose :where(p, li, span, strong, em, blockquote) {
+  color: var(--app-text) !important;
+}
+
+.content-prose :where(h1, h2, h3, h4, h5, h6) {
+  color: var(--app-text) !important;
+}
+
+.content-prose a {
+  color: var(--bs-link-color) !important;
+}
+
+.content-prose p {
+  margin-bottom: 1rem;
+}
+
+.content-prose h1,
+.content-prose h2,
+.content-prose h3,
+.content-prose h4 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.content-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.content-prose pre {
+  background: #0b1220;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  overflow: auto;
+}
+
+.content-prose pre,
+.content-prose pre * {
+  color: #fff !important;
 }
   
  
@@ -87,15 +190,15 @@ a:hover {
 
 /* Botón personalizado base */
 .btn-custom {
-  color: #fff; /* Texto blanco */
+  color: inherit;
   border: 2px solid transparent; /* Sin borde inicial */
   transition: all 0.3s ease-in-out; /* Transición suave */
 }
 
 /* GitHub */
 .btn-github {
-  background-color: var(--primary);
-  border-color: var(--primary);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
   color: white;
 }
 
@@ -235,7 +338,7 @@ a:hover {
   height: 50px;
   width: 50px;
   font-family: 'Raleway', sans-serif;
-  color: #fff; /* Cambiado a blanco */
+  color: var(--app-text);
   border-radius: 10px;
   box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
   background: white;
@@ -263,6 +366,7 @@ a:hover {
 /* Colores personalizados para cada red social */
 #gmail {
   background: #d93025; /* Rojo característico de Gmail */
+  color: #fff;
 }
 
 #gmail svg {
@@ -272,6 +376,7 @@ a:hover {
 
 #linkedin {
   background: #0e76a8; /* Fondo azul */
+  color: #fff;
 }
 
 #linkedin svg {
@@ -280,6 +385,7 @@ a:hover {
 
 #github {
   background: #333; /* Fondo negro */
+  color: #fff;
 }
 
 #github svg {
@@ -447,8 +553,8 @@ a:hover {
 .timeline {
   position: relative;
   padding: 2rem 0;
-  margin-left: 3rem;
-  border-left: 3px solid #ffc107; /* Amarillo */
+  margin-left: 2rem;
+  border-left: 3px solid rgba(var(--bs-primary-rgb), 0.35);
 }
 
 /* Items de la línea */
@@ -464,10 +570,10 @@ a:hover {
   top: 0;
   width: 24px;
   height: 24px;
-  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 1), #ff6584);
   border-radius: 50%;
   border: 3px solid white;
-  box-shadow: 0 0 6px rgba(255, 193, 7, 0.5);
+  box-shadow: 0 0 10px rgba(var(--bs-primary-rgb), 0.25);
 }
 
 /* Contenido del item */
@@ -488,13 +594,13 @@ a:hover {
 .exp-title {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #ff8c00;
+  color: var(--bs-primary);
 }
 
 /* Empresa y fechas */
 .exp-company {
   font-style: italic;
-  color: #ffc107;
+  color: var(--app-muted);
   margin-bottom: 0.5rem;
 }
 
@@ -507,109 +613,37 @@ a:hover {
 /* Etiquetas */
 .exp-tags span {
   display: inline-block;
-  background-color: #fff7e6;
-  color: #b45309;
+  background-color: rgba(var(--bs-primary-rgb), 0.08);
+  color: rgba(var(--bs-primary-rgb), 1);
   font-size: 0.875rem;
   padding: 0.3rem 0.6rem;
   margin: 0.2rem;
   border-radius: 0.5rem;
-  border: 1px solid #ffe08a;
+  border: 1px solid rgba(var(--bs-primary-rgb), 0.18);
 }
 
 /* Hover elegante */
 .exp-tags span:hover {
-  background-color: #ffeb99; /* Un poco más brillante */
+  background-color: rgba(var(--bs-primary-rgb), 0.14);
   transform: scale(1.05);
-  box-shadow: 0 2px 6px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(var(--bs-primary-rgb), 0.22);
 }
-
-
-#experiencia h2 {
-  font-size: 2.25rem; /* Tamaño grande */
-  font-weight: 700;
-  color: #ff8c00; /* Naranjo fuerte */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  display: inline-block;
-  margin-bottom: 2rem;
-  padding-left: 30px;
-}
-
-/* Línea decorativa debajo del título */
-#experiencia h2::after {
-  content: '';
-  display: block;
-  width: 60%;
-  height: 4px;
-  background: linear-gradient(to right, #ffc107, #ff8c00);
-  margin-top: 0.5rem;
-  border-radius: 2px;
-}
-#experiencia h2 {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Título de sección */
-#proyectos h2.section-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #ff8c00;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  display: inline-block;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-
 
 /* Card de proyecto */
 .card-project {
   background-color: white;
-  border: 1px solid #eee;
+  border: 1px solid rgba(2, 6, 23, 0.06);
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .card-project:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.2);
+  box-shadow: 0 14px 40px rgba(var(--bs-primary-rgb), 0.18);
 }
 
-/* Títulos dentro de la card */
-.card-project h4 {
-  color: #ff8c00;
-}
-
-/* Descripción */
-.card-project p {
-  color: #555;
-}
-#proyectos {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-/* Botón personalizado para proyectos */
-.btn-proyecto {
-  background-color: #ff8c00; /* Naranjo fuerte */
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.btn-proyecto i {
-  margin-right: 6px;
-}
-
-/* Hover del botón */
-.btn-proyecto:hover {
-  transform: translateY(-2px);
-  text-decoration: none;
-  color:white;
+@media (max-width: 576px) {
+  .timeline {
+    margin-left: 1.25rem;
+  }
 }

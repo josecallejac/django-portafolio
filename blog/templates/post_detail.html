@@ -1,19 +1,31 @@
 {% extends 'layout.html' %}
 
+{% block title %}{{ post.title }} | Blog{% endblock %}
+
 {% block content %}
 
-<div class="text-center">
+<section class="section">
+  <div class="container" style="max-width: 920px;">
+    <a class="btn btn-sm btn-outline-primary mb-4" href="{% url 'blog:posts' %}">
+      <i class="fa-solid fa-arrow-left me-2"></i> Volver al blog
+    </a>
 
-  <h1>{{post.title}}</h1>
-  <h2 class="my-2 h5 text-muted">{{post.date|date:'F jS Y'}}</h2>
+    <header class="mb-4">
+      <h1 class="fw-bold mb-2">{{ post.title }}</h1>
+      <p class="text-secondary mb-0">
+        <i class="fa-regular fa-calendar me-2"></i>{{ post.date|date:'d F Y' }}
+      </p>
+    </header>
 
-  <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid">
+    <div class="rounded-4 overflow-hidden shadow-sm border bg-white mb-4">
+      <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid w-100"
+        style="max-height: 420px; object-fit: cover;" loading="lazy">
+    </div>
 
-
-  <div class="my-4">
-
-  {{post.description|safe}}
+    <div class="content-prose bg-white border rounded-4 p-4 p-md-5 shadow-sm">
+      {{ post.description|safe }}
+    </div>
   </div>
-</div>
+</section>
 
 {% endblock %}

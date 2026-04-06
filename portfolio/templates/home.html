@@ -1,223 +1,173 @@
 {% extends 'layout.html' %}
+{% load static %}
+
 {% block stylesheets %}
-
-
+<link rel="preload" as="image" href="{% static 'portfolio/joseprogramador.webp' %}">
 {% endblock %}
 
 {% block content %}
 
-{% load static %}
+<section id="inicio" class="hero-section">
+  <div class="container section">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="hero-card p-4 p-md-5">
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+            <span class="badge text-bg-success">Disponible para trabajar</span>
+            <span class="text-white opacity-75 small">Desarrollador Web</span>
+          </div>
 
-<!-- HERO moderno estilo Growtech -->
-<section class="py-5 bg-light d-flex align-items-center" style="min-height: 80vh;">
-  <div class="container text-center">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-3 mb-4 mb-md-0">
-        <img src="{% static 'portfolio/joseprogramador.webp' %}" alt="José Calleja" class="img-fluid rounded-circle shadow" style="width: 160px;">
+          <h1 class="display-5 fw-bold mb-3">
+            Hola, soy <span class="text-warning">José Calleja</span>
+          </h1>
+
+          <p class="lead mb-4 text-white opacity-75">
+            Más de 4 años en el rubro. Apasionado por crear soluciones tecnológicas con impacto e innovación.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary btn-lg" href="#proyectos">
+              <i class="fa-solid fa-diagram-project me-2"></i> Ver proyectos
+            </a>
+            <a class="btn btn-outline-light btn-lg" href="{% static 'portfolio/CVJOSECALLEJA.pdf' %}" target="_blank"
+              rel="noreferrer">
+              <i class="fa-regular fa-file-lines me-2"></i> Descargar CV
+            </a>
+          </div>
+
+          <div class="d-flex align-items-center gap-2 mt-4">
+            <a class="btn btn-outline-light btn-icon" href="mailto:info@josecalleja.lat" aria-label="Email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+            <a class="btn btn-outline-light btn-icon" href="https://www.linkedin.com/in/jose-calleja-24a45923a/"
+              target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a class="btn btn-outline-light btn-icon" href="https://github.com/josecallejac" target="_blank"
+              rel="noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 text-start">
-        <span class="badge bg-primary mb-3">Disponible para trabajar</span>
-        <h1 class="fw-bold display-5">Hola, soy <span class="text-warning">José Calleja</span></h1>
-        <p class="lead">+ de 4 años en el rubro. Apasionado por crear soluciones tecnológicas con impacto innovador.</p>
-        <h4 class="fw-semibold mb-3">Desarrollador Web</h4>
-        <div class="d-flex gap-3">
-          <a href="mailto:info@josecalleja.lat" class="btn btn-danger rounded-circle"><i class="fas fa-envelope"></i></a>
-          <a href="https://www.linkedin.com/in/jose-calleja-24a45923a/" class="btn btn-primary rounded-circle"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/josecallejac" class="btn btn-dark rounded-circle"><i class="fab fa-github"></i></a>
+
+      <div class="col-lg-5 text-center">
+        <img src="{% static 'portfolio/joseprogramador.webp' %}" alt="Foto de José Calleja"
+          class="hero-avatar img-fluid" width="320" height="320" loading="eager" fetchpriority="high"
+          decoding="async">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia" class="section">
+  <div class="container">
+    <div class="mb-4">
+      <h2 class="section-title fw-bold mb-2">Experiencia</h2>
+      <p class="text-secondary mb-0">Roles recientes y tecnologías principales.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 class="exp-title mb-2">Developer Web FrontEnd/BackEnd · Soporte TI</h3>
+          <p class="exp-company mb-2">TS Latam · Enero 2024 - Presente</p>
+          <p class="exp-description mb-3">
+            Desarrollo de aplicaciones web escalables, con foco en código limpio y buenas prácticas, mejorando la
+            experiencia visual de sitios y sistemas.
+          </p>
+          <div class="exp-tags">
+            <span>PHP</span>
+            <span>Symfony</span>
+            <span>Angular</span>
+            <span>SQL</span>
+            <span>Desarrollo Web</span>
+            <span>Diseño Web</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 class="exp-title mb-2">Software Engineer</h3>
+          <p class="exp-company mb-2">Arcadius Entertainment · Junio 2023 - Diciembre 2023</p>
+          <p class="exp-description mb-3">
+            Desarrollo de videojuego utilizando el motor gráfico UE5.
+          </p>
+          <div class="exp-tags">
+            <span>Unreal Engine</span>
+            <span>SCRUM</span>
+            <span>Arquitectura de Software</span>
+            <span>Modelo 3D</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!--
-<section class="row my-4 text-center">
-  <h2 class="raleway-bold">Software Stack</h2>
-  <p class="raleway-light">Las tecnologías que utilizo para crear soluciones increíbles</p>
+<section id="proyectos" class="section bg-body">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title fw-bold mb-2">Proyectos</h2>
+      <p class="text-secondary mb-0">Algunos trabajos destacados.</p>
+    </div>
 
-  <div class="row mt-4 justify-content-center">
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <button class="brutalist-button button-1">
-        <div class="openai-logo">
-          <i class="fab fa-python fa-3x"></i>
-        </div>
-        <div class="button-text">
-          <span>Python</span>
-        </div>
-      </button>
-    </div>
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <button class="brutalist-button button-1">
-        <div class="openai-logo">
-          <img 
-            src="https://static.djangoproject.com/img/logos/django-logo-negative.svg" 
-            alt="Django Logo" 
-            style="width: 5rem; margin-bottom: 0.4rem; height: 50px;"
-             />
-        </div>
-        <div class="button-text">
-          <span>Django</span>
-        </div>
-      </button>
-    </div>
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <button class="brutalist-button button-1">
-        <div class="openai-logo">
-          <i class="fab fa-js-square fa-3x text-warning"></i>
-        </div>
-        <div class="button-text">
-          <span>JavaScript</span>
-        </div>
-      </button>
-    </div>
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <button class="brutalist-button button-1">
-        <div class="openai-logo">
-          <i class="fab fa-react fa-3x text-purple mb-2" style="color:#11CAF0"></i>
-        </div>
-        <div class="button-text">
-          <span>React</span>
-        </div>
-      </button>
-    </div>
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <button class="brutalist-button button-1">
-        <div class="openai-logo">
-          <i class="fab fa-php fa-3x  mb-2" style="color:blueviolet"></i>
-        </div>
-        <div class="button-text">
-          <span>PHP</span>
-        </div>
-      </button>
-    </div>
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <button class="brutalist-button button-1">
-        <div class="openai-logo">
-          <i class="fas fa-database fa-3x text-info mb-2"></i>
-        </div>
-        <div class="button-text">
-          <span>PostgreSQL</span>
-        </div>
-      </button>
-    </div>
-  </div>
-  <div class="row mt-4 justify-content-center">
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <button class="brutalist-button button-1">
-        <div class="openai-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" style="width: 3rem; margin-bottom: 0.5rem; height: 50px;">
-        </div>
-        <div class="button-text">
-          <span>Tailwind</span>
-        </div>
-      </button>
-    </div>
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-      <button class="brutalist-button button-1">
-        <div class="openai-logo">
-          <i class="fab fa-bootstrap" style="color:#7952B3; font-size: 3rem;"></i>
-        </div>
-        <div class="button-text">
-          <span>Bootstrap</span>
-        </div>
-      </button>
-    </div>
-  </div>
-</section>
--->
+    <div class="row g-4 justify-content-center">
+      {% for project in projects %}
+      <div class="col-sm-6 col-lg-4 d-flex">
+        <div class="card card-project h-100 border-0 w-100">
+          <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}" loading="lazy"
+            style="height: 200px; object-fit: cover;">
 
-<section id="experiencia" class="mt-5 min-h-screen">
-  <h2 class="text-3xl raleway-bold mb-6">Experiencia Laboral</h2>
-  <div class="timeline">
-    <!-- Primera experiencia -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3 class="exp-title text-warning">Developer Web FrontEnd/BackEnd · Soporte TI</h3>
-        <p class="exp-company">TS Latam · Enero 2024 - Presente</p>
-        <p class="exp-description">
-          Desarrollo de aplicaciones web escalables, enfocado en código limpio y mejores prácticas, mejorando la visual
-          de las páginas webs.
-        </p>
-        <div class="exp-tags">
-          <span>PHP</span>
-          <span>Symfony</span>
-          <span>Angular</span>
-          <span>SQL</span>
-          <span>Desarrollo Web</span>
-          <span>Diseño Web</span>
+          <div class="card-body text-center">
+            <small class="text-secondary d-block mb-2">{{ project.date|date:'M Y' }}</small>
+
+            <h3 class="h5 fw-bold mb-2">{{ project.title }}</h3>
+            <p class="text-secondary mb-3">{{ project.description }}</p>
+
+            {% if project.url %}
+            <a href="{{ project.url }}" class="btn btn-primary btn-sm" target="_blank" rel="noreferrer">
+              <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Ver proyecto
+            </a>
+            {% else %}
+            <span class="badge text-bg-light text-secondary">Sin enlace público</span>
+            {% endif %}
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Segunda experiencia -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3 class="exp-title text-warning">Software Engineer</h3>
-        <p class="exp-company">Arcadius Entertainment · Junio 2023 - Diciembre 2023</p>
-        <p class="exp-description">
-          Desarrollo de videojuego utilizando el motor gráfico UE5.
-        </p>
-        <div class="exp-tags">
-          <span>Unreal Engine</span>
-          <span>Metodología SCRUM</span>
-          <span>Arquitectura de Software</span>
-          <span>Modelo 3D</span>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
 
-
-<!-- PROYECTOS -->
-<section id="proyectos" class="min-h-screen">
-  <div class="row my-4 text-center">
-    <h2 class="section-title">Mis Proyectos</h2>
-  </div>
-
-  <div class="row justify-content-center">
-    {% for project in projects %}
-    <div class="col-md-4 col-sm-6 mb-4">
-      <div class="card card-project rounded">
-        <!-- Imagen del proyecto -->
-        <img 
-          src="{{ project.image.url }}" 
-          class="card-img-top rounded-top" 
-          alt="{{ project.title }}" 
-          style="height: 200px; object-fit: cover;"
-        />
-
-        <!-- Contenido de la tarjeta -->
-        <div class="card-body text-center">
-          <h4 class="raleway-bold text-dark">{{ project.title }}</h4>
-          <p class="raleway-light text-muted">{{ project.description }}</p>
-
-          {% if project.url %}
-          <a 
-            href="{{ project.url }}" 
-            class="btn btn-proyecto  mt-2" 
-            target="__blank" 
-            rel="noreferrer"
-          >
-            <i class="fas fa-external-link-alt"></i> Visita la Página
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="p-4 p-md-5 rounded-4 border bg-white shadow-sm">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-2">¿Hablamos?</h2>
+          <p class="text-secondary mb-0">
+            Si tienes una idea, un proyecto o quieres mejorar la visual de tu producto, feliz de ayudar.
+          </p>
+        </div>
+        <div class="col-lg-4 d-flex justify-content-lg-end gap-2">
+          <a class="btn btn-primary" href="mailto:info@josecalleja.lat">
+            <i class="fa-regular fa-envelope me-2"></i> Enviar email
           </a>
-          {% endif %}
+          <a class="btn btn-outline-primary" href="{% url 'blog:posts' %}">
+            <i class="fa-regular fa-newspaper me-2"></i> Ver blog
+          </a>
         </div>
       </div>
     </div>
-    {% endfor %}
   </div>
 </section>
 
 
 
 
-
-{% endblock %}
-
-
-{% block javascript %}
 
 {% endblock %}

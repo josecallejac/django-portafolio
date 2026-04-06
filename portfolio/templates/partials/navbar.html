@@ -1,35 +1,37 @@
 {% load static %}
-{% block stylesheets %}
 
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-{% endblock %}
-    
-<section class="flex items-center justify-center"> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top app-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{% url 'home' %}">José Calleja</a>
 
-    <nav class="mt-0.5 py-2 px-2 bg-gray-800 rounded-full "> 
-        <ul class="flex items-baseline space-x-10 sm:space-x-12 md:space-x-16 text-xs sm:text-sm" style="padding-right: 1.5rem; padding-top: 7px; margin-bottom: 0.3rem;">
-            <li>
-                <a href="#" class="relative raleway-light text-white hover:text-gray-300  py-3" style="text-decoration: none; font-weight: 500;"> 
-                  Home
-                </a>
-            </li>
-            <li>
-                <a href="#experiencia" class="relative raleway-light text-white hover:text-gray-300 transition-colors duration-150 py-3" style="text-decoration: none; font-weight: 500;"> 
-                    Sobre
-                </a>
-            </li>
-            <li>
-                <a href="#proyectos" class="relative raleway-light text-white hover:text-gray-300 transition-colors duration-150 py-3" style="text-decoration: none; font-weight: 500;"> 
-                    Proyectos
-                </a>
-            </li>
-            <li>
-                <a href="#" class="relative raleway-light text-white hover:text-gray-300 transition-colors duration-150 py-3" style="text-decoration: none; font-weight: 500;"> 
-                    Contacto
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-</section>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}#experiencia">Experiencia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}#proyectos">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
+        </li>
+      </ul>
+
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-light btn-sm" href="{% static 'portfolio/CVJOSECALLEJA.pdf' %}" target="_blank"
+          rel="noreferrer">
+          <i class="fa-regular fa-file-lines me-1"></i> CV
+        </a>
+        <a class="btn btn-primary btn-sm" href="mailto:info@josecalleja.lat">
+          <i class="fa-regular fa-envelope me-1"></i> Contacto
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
 
