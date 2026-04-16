@@ -14,6 +14,7 @@ from pathlib import Path
 import dj_database_url
 from dotenv import load_dotenv
 import os
+from urllib.parse import urlparse
 
 
 load_dotenv() 
@@ -44,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-    'blog',
+    'blog.apps.BlogConfig',
     'portfolio',
 ]
 
@@ -86,16 +87,36 @@ WSGI_APPLICATION = 'django_portfolio.wsgi.application'
 
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_SSL_REQUIRE = os.getenv("DATABASE_SSL_REQUIRE")
+
+
+def _env_truthy(value: str | None) -> bool:
+    if value is None:
+        return False
+    return value.strip().lower() in {"1", "true", "t", "yes", "y", "on"}
+
+
+def _is_local_database(url: str) -> bool:
+    try:
+        host = urlparse(url).hostname
+    except Exception:
+        return False
+    return host in {"localhost", "127.0.0.1", "::1"}
 
 # En producción (Railway) se usa `DATABASE_URL` (PostgreSQL).
 # En local, si no existe `DATABASE_URL`, se usa SQLite para evitar quedar "sin DB".
 if DATABASE_URL:
+    ssl_require = (
+        _env_truthy(DATABASE_SSL_REQUIRE)
+        if DATABASE_SSL_REQUIRE is not None
+        else not _is_local_database(DATABASE_URL)
+    )
     DATABASES = {
         "default": dj_database_url.parse(
             DATABASE_URL,
             conn_max_age=600,
             conn_health_checks=True,
-            ssl_require=True,
+            ssl_require=ssl_require,
         )
     }
 else:

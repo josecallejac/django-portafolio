@@ -5,5 +5,7 @@ app_name = 'blog'
 
 urlpatterns = [
     path("", views.renderPosts, name="posts"),
-    path("<int:post_id>", views.post_detail, name="post_detail"),
+    path("<int:post_id>/", views.post_detail, name="post_detail"),
+    # Soporta URLs antiguas sin slash final
+    path("<int:post_id>", views.post_detail),
 ]

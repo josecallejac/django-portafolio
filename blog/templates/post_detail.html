@@ -1,20 +1,18 @@
 {% extends 'layout.html' %}
 
-{% block title %}{{ post.title }} | Blog{% endblock %}
+{% block title %}{{ post.title }} | Trabajos{% endblock %}
 
 {% block content %}
 
 <section class="section">
   <div class="container" style="max-width: 920px;">
     <a class="btn btn-sm btn-outline-primary mb-4" href="{% url 'blog:posts' %}">
-      <i class="fa-solid fa-arrow-left me-2"></i> Volver al blog
+      <i class="fa-solid fa-arrow-left me-2"></i> Volver a trabajos
     </a>
 
     <header class="mb-4">
       <h1 class="fw-bold mb-2">{{ post.title }}</h1>
-      <p class="text-secondary mb-0">
-        <i class="fa-regular fa-calendar me-2"></i>{{ post.date|date:'d F Y' }}
-      </p>
+      
     </header>
 
     <div class="rounded-4 overflow-hidden shadow-sm border bg-white mb-4">

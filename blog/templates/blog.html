@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title %}Blog | José Calleja{% endblock %}
+{% block title %}Trabajos | José Calleja{% endblock %}
 
 {% block content %}
 
@@ -8,8 +8,8 @@
   <div class="container">
     <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-2 mb-4">
       <div>
-        <h1 class="display-6 fw-bold mb-2">Blog</h1>
-        <p class="text-secondary mb-0">Hay {{ total_posts }} post{{ total_posts|pluralize }}.</p>
+        <h1 class="display-6 fw-bold mb-2">Trabajos</h1>
+        <p class="text-secondary mb-0">Hay {{ total_posts }} trabajo{{ total_posts|pluralize:"s" }}.</p>
       </div>
 
       <a class="btn btn-outline-primary" href="{% url 'home' %}#inicio">
@@ -41,7 +41,7 @@
 
           <div class="card-footer bg-transparent border-0 pt-0 pb-3 px-3">
             <a class="btn btn-primary btn-sm" href="{% url 'blog:post_detail' post.id %}">
-              Leer más <i class="fa-solid fa-arrow-right ms-1"></i>
+              Ver detalle <i class="fa-solid fa-arrow-right ms-1"></i>
             </a>
           </div>
         </article>

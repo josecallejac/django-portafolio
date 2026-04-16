@@ -12,18 +12,25 @@ Class-based views
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    2. Add a URL to urlpatterns:  path('trabajos/', include('blog.urls'))
 """
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import RedirectView
 from portfolio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('blog/', include('blog.urls'))
+    # Canonical: "Trabajos" (antes "Blog")
+    path('trabajos/', include('blog.urls')),
+
+    # Backwards-compat: redirige URLs antiguas /blog/ -> /trabajos/
+    path('blog/<int:post_id>/', RedirectView.as_view(pattern_name='blog:post_detail', permanent=True)),
+    path('blog/<int:post_id>', RedirectView.as_view(pattern_name='blog:post_detail', permanent=True)),
+    path('blog/', RedirectView.as_view(pattern_name='blog:posts', permanent=True)),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
