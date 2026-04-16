@@ -17,10 +17,28 @@ import os
 from urllib.parse import urlparse
 
 
-load_dotenv() 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+_dotenv_path = os.getenv("DOTENV_PATH")
+_django_env = os.getenv("DJANGO_ENV", "").strip().lower()
+
+if _dotenv_path:
+    load_dotenv(_dotenv_path, override=False)
+else:
+    _env_file = BASE_DIR / ".env"
+    _env_example_file = BASE_DIR / ".env.example"
+
+    # Behavior:
+    # - Local (default): load `.env.example`
+    # - Production (`DJANGO_ENV=production`): load `.env`
+    # Platform-provided env vars always win (`override=False`).
+    if _django_env in {"prod", "production"}:
+        if _env_file.exists():
+            load_dotenv(_env_file, override=False)
+    else:
+        if _env_example_file.exists():
+            load_dotenv(_env_example_file, override=False)
 
 
 # Quick-start development settings - unsuitable for production
@@ -186,8 +204,6 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CACHES = {
     "default": {
